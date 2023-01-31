@@ -12,9 +12,18 @@ namespace Sem9
         {
             int m = Checker.CheckInput<int>(x => x < 1, "Введите M", "Ниже нельзя");
             int n = Checker.CheckInput<int>(x => x <= m, "Введите N", "Ты убил логику программы, N должна быть больше M");
-
-            m = Akker(m, n);
-            Console.WriteLine(m);
+            if (m !=0 && n !=0)
+            {
+                m = Akker(m, n);
+                Console.WriteLine(m);
+            }
+            else
+            {
+                Console.WriteLine("Так, а ну, не ломай мне тут программу");
+                Console.ReadKey();
+                Start();
+            }
+            
         }
 
         public static int Akker(int m, int n)
